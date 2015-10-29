@@ -1,4 +1,5 @@
-import React, { Component, findDOMNode, PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
+import {findDOMNode} from 'react-dom';
 import classNames from 'classnames';
 
 export default class LazyLoad extends Component {
@@ -36,7 +37,6 @@ export default class LazyLoad extends Component {
   }
   onWindowScroll() {
     const { threshold } = this.props;
-
     const bounds = findDOMNode(this).getBoundingClientRect();
     const scrollTop = window.pageYOffset;
     const top = bounds.top + scrollTop;
